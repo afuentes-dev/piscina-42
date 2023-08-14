@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_sort_it_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afuentes <afuentes@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 23:17:40 by afuentes          #+#    #+#             */
-/*   Updated: 2023/08/14 00:07:19 by afuentes         ###   ########.fr       */
+/*   Created: 2023/08/14 18:48:56 by afuentes          #+#    #+#             */
+/*   Updated: 2023/08/14 19:49:15 by afuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-void	ft_putnbr(int nb);
-
-int	main(void)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	int nb = 42;
-	ft_putnbr(nb);
-	return (0);
-}
+	int		i;
+	int		swap;
 
-void	ftputnbr(int nb)
-{
-	char	num[2];
-
-	num[0] = '0' + (nb / 10);
-	num[1] = '0' + (nb % 10);
-	write (1, &num, 2);
+	while (i >= 0)
+	{
+		i = 0;
+		while (i < (size - 1))
+		{
+			if (tab[i] > tab[i + 1])
+			{
+				swap = tab[i];
+				tab[i] = tab [i + 1];
+				tab [i + 1] = swap;
+			}
+			i++;
+		}
+		size--;
+	}
 }

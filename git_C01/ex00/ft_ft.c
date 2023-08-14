@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afuentes <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: afuentes <afuentes@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:32:33 by afuentes          #+#    #+#             */
-/*   Updated: 2023/08/13 17:31:43 by afuentes         ###   ########.fr       */
+/*   Updated: 2023/08/14 21:41:37 by afuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-void	ft_ft(int *nbr);
+void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
