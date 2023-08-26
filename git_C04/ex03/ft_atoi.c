@@ -1,51 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afuentes <afuentes@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 23:17:23 by afuentes          #+#    #+#             */
-/*   Updated: 2023/08/17 13:53:23 by afuentes         ###   ########.fr       */
+/*   Created: 2023/08/22 19:31:26 by afuentes          #+#    #+#             */
+/*   Updated: 2023/08/26 22:17:59 by afuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strlowcase(char *str)
+#include <stdio.h>
+
+int	ft_atoi(char *str)
 {
 	int		i;
+	int		c;
+	int		nbr;
 
+	nbr = 0;
+	c = 1;
 	i = 0;
-	while (str[i] != '\0')
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	while (str[i] && (str[i] == 43 || str[i] == 45))
 	{
-		if (str[i] >= 65 && str[i] <= 90)
+		if (str[i] == 45)
 		{
-			str[i] += 32;
+			c *= -1;
 		}
 		i++;
 	}
-	return (str);
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		nbr *= 10;
+		nbr += str[i] - 48;
+		i++;
+	}
+	return (nbr * c);
 }
 
-char	*ft_strcapitalize(char *str)
+int main(void)
 {
-	int		i;
-	int		i1;
+	char str[] = "----1234";
 
-	i = 0;
-	i1 = 1;
-	ft_strlowcase(str);
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 97 && str[i] <= 122)
-		{
-			if (i1 == 1)
-				str[i] -= 32;
-				i1 = 0;
-		}
-		else if (str[i] >= 48 && str[i] <= 57)
-			i1 = 0;
-		else
-			i1 = 1;
-		i++;
-	}	
-	return (str);
+	printf("%d", ft_atoi(str));
+	return (0);
 }

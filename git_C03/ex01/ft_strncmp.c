@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afuentes <afuentes@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 16:06:28 by afuentes          #+#    #+#             */
-/*   Updated: 2023/08/22 16:38:55 by afuentes         ###   ########.fr       */
+/*   Created: 2023/08/17 16:57:53 by afuentes          #+#    #+#             */
+/*   Updated: 2023/08/24 20:31:13 by afuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	write (1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	while (n && *s1 && (*s1 == *s2))
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
+		++s1;
+		++s2;
+		--n;
 	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-		ft_putnbr(nb);
-	}
-	else if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+	if (n == 0)
+		return (0);
 	else
-		ft_putchar(nb + 48);
+		return (unsigned char)(*s1) - (unsigned char)(*s2);
 }

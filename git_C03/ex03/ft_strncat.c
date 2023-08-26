@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afuentes <afuentes@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 16:06:28 by afuentes          #+#    #+#             */
-/*   Updated: 2023/08/22 16:38:55 by afuentes         ###   ########.fr       */
+/*   Created: 2023/08/17 19:26:52 by afuentes          #+#    #+#             */
+/*   Updated: 2023/08/22 17:26:17 by afuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-void	ft_putchar(char c)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	write (1, &c, 1);
-}
+	unsigned int		i;
+	unsigned int		j;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
+		i++;
 	}
-	else if (nb < 0)
+	while (src[j] != '\0' && j < nb)
 	{
-		ft_putchar('-');
-		nb = -nb;
-		ft_putnbr(nb);
+		dest[i + j] = src[j];
+		j++;
 	}
-	else if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + 48);
+	dest[i + j] = '\0';
+	return (dest);
 }

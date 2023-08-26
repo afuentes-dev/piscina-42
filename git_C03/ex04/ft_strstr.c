@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afuentes <afuentes@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 16:06:28 by afuentes          #+#    #+#             */
-/*   Updated: 2023/08/22 16:38:55 by afuentes         ###   ########.fr       */
+/*   Created: 2023/08/17 19:38:13 by afuentes          #+#    #+#             */
+/*   Updated: 2023/08/21 13:31:03 by afuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-void	ft_putchar(char c)
+char	*ft_strstr(char *str, char *to_find)
 {
-	write (1, &c, 1);
-}
+	int		i;
+	int		j;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	i = 0;
+	j = 0;
+	if (to_find[j] == '\0')
+		return (str);
+	while (str[i] != '\0')
 	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
+		while (str[i + j] == to_find[j] && str[i + j] != '\0')
+			j++;
+		if (to_find[j] == '\0')
+			return (str + i);
+		i++;
+		j = 0;
 	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-		ft_putnbr(nb);
-	}
-	else if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-		ft_putchar(nb + 48);
+	return (0);
 }

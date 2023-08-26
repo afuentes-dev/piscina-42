@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_start.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afuentes <afuentes@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: tortiz-r <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 15:21:00 by afuentes          #+#    #+#             */
-/*   Updated: 2023/08/17 18:44:16 by afuentes         ###   ########.fr       */
+/*   Created: 2023/08/20 20:18:14 by tortiz-r          #+#    #+#             */
+/*   Updated: 2023/08/20 20:19:24 by tortiz-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
 
-	i = 0;
-	while (i < n && src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+#include<unistd.h>
+
+int	ft_start(char *str)
+{
+	//empieza a rellenar el sudoku
 }

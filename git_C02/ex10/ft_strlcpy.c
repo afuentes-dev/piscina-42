@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afuentes <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: afuentes <afuentes@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:26:27 by afuentes          #+#    #+#             */
-/*   Updated: 2023/08/16 21:02:38 by afuentes         ###   ########.fr       */
+/*   Updated: 2023/08/18 12:11:46 by afuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strlen(char *src)
