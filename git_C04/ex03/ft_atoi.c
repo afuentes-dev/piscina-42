@@ -6,11 +6,9 @@
 /*   By: afuentes <afuentes@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 19:31:26 by afuentes          #+#    #+#             */
-/*   Updated: 2023/08/26 22:17:59 by afuentes         ###   ########.fr       */
+/*   Updated: 2023/08/28 16:05:15 by afuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-
 int	ft_atoi(char *str)
 {
 	int		i;
@@ -37,12 +35,4 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (nbr * c);
-}
-
-int main(void)
-{
-	char str[] = "----1234";
-
-	printf("%d", ft_atoi(str));
-	return (0);
 }
