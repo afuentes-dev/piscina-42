@@ -6,7 +6,7 @@
 /*   By: afuentes <afuentes@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 16:57:53 by afuentes          #+#    #+#             */
-/*   Updated: 2023/08/24 20:31:13 by afuentes         ###   ########.fr       */
+/*   Updated: 2023/08/28 15:56:41 by afuentes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
@@ -20,5 +20,5 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	if (n == 0)
 		return (0);
 	else
-		return (unsigned char)(*s1) - (unsigned char)(*s2);
+		return ((unsigned char)(*s1) - (unsigned char)(*s2));
 }
